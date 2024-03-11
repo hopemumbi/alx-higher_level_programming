@@ -91,7 +91,7 @@ guillaume@ubuntu:~/py/0x00$
 
 <h1>6-concat.py</h1>
 
-Complete this source code to `print Welcome to Holberton School!`
+Complete this source code to print `Welcome to Holberton School!`
 * You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/6-concat.py)
 * You are not allowed to use any loops or conditional statements.
 * You have to use the variables `str1` and `str2` in your new line of code
