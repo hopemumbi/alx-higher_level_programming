@@ -1,4 +1,5 @@
 <h1>0-run</h1>
+
 Write a Shell script that runs a Python script.
 The Python file name will be saved in the environment variable `$PYFILE`
 
@@ -41,11 +42,11 @@ guillaume@ubuntu:~/py/0x00$
 Complete this source code in order to print the integer stored in the variable `number`, followed by `Battery street`, followed by a new line.
 * You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/3-print_number.py)
 * The output of the script should be:
-*  the number, followed by Battery street,
-*  followed by a new line
+  * the number, followed by `Battery street`,
+  * followed by a new line
 * You are not allowed to cast the variable `number` into a string
 * Your code must be 3 lines long
-* You have to use f-strings tips
+* You have to use f-strings [tips](https://realpython.com/python-f-strings/)
 
 ```
 guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
@@ -58,8 +59,8 @@ guillaume@ubuntu:~/py/0x00$
 Complete the source code in order to print the float stored in the variable `number` with a precision of 2 digits.
 * You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/4-print_float.py)
 * The output of the program should be:
-*  `Float:`, followed by the float with only 2 digits
-*  followed by a new line
+  * `Float:`, followed by the float with only 2 digits
+  * followed by a new line
 * You are not allowed to cast `number` to string
 * You have to use f-strings
 
@@ -74,10 +75,10 @@ guillaume@ubuntu:~/py/0x00$
 Complete this source code in order to print 3 times a string stored in the variable `str`, followed by its first 9 characters.
 * You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/5-print_string.py)
 * The output of the program should be:
-*  3 times the value of str
-*  followed by a new line
-*  followed by the 9 first characters of str
-*  followed by a new line
+  * 3 times the value of `str`
+  * followed by a new line
+  * followed by the 9 first characters of `str`
+  * followed by a new line
 * You are not allowed to use any loops or conditional statement
 * Your program should be maximum 5 lines long
 
@@ -90,8 +91,8 @@ guillaume@ubuntu:~/py/0x00$
 
 <h1>6-concat.py</h1>
 
-Complete this source code to `print Welcome to Holberton School!`
-* You can find the source code [here]()https://github.com/alx-tools/0x00.py/blob/master/6-concat.py
+Complete this source code to print `Welcome to Holberton School!`
+* You can find the source code [here](https://github.com/alx-tools/0x00.py/blob/master/6-concat.py)
 * You are not allowed to use any loops or conditional statements.
 * You have to use the variables `str1` and `str2` in your new line of code
 * Your program should be exactly 5 lines long
@@ -146,7 +147,7 @@ guillaume@ubuntu:~/py/0x00$
 <h1>9-easter_egg.py</h1>
 
 Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
-* Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
+* Your script should be maximum 98 characters long (please check with `wc -m 9-easter_egg.py`)
 
 ```
 guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py
@@ -356,15 +357,15 @@ Linked list has no cycle
 Linked list has a cycle
 carrie@ubuntu:~/0x00$
 ```
->> Solving a problem is already a big win! but finding the best and optimal way to solve it, it’s way better! Think about the most optimal / fastest way to do it.
+> Solving a problem is already a big win! but finding the best and optimal way to solve it, it’s way better! Think about the most optimal / fastest way to do it.
   
 <h1>100-write.py</h1>
 
 Write a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
-* Use the function write from the sys module
-* You are not allowed to use print
-* Your script should print to stderr
-* Your script should exit with the status code 1
+* Use the function `write` from the `sys` module
+* You are not allowed to use `print`
+* Your script should print to `stderr`
+* Your script should exit with the status code `1`
 
 ```
 guillaume@ubuntu:~/py/0x00$ ./100-write.py
@@ -380,7 +381,9 @@ guillaume@ubuntu:~/py/0x00$
 <h1>101-compile</h1>
 
 Write a script that compiles a Python script file.
+
 The Python file name will be stored in the environment variable `$PYFILE`
+
 The output filename has to be `$PYFILEc` (ex: `export PYFILE=my_main.py` => output filename: `my_main.pyc`)
 
 ```
@@ -420,3 +423,5 @@ Write the Python function `def magic_calculation(a, b):` that does exactly the s
              10 BINARY_ADD
              11 RETURN_VALUE
 ```
+
+* Tip: [Python bytecode](https://docs.python.org/3.4/library/dis.html)
