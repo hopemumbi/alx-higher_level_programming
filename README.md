@@ -357,15 +357,15 @@ Linked list has no cycle
 Linked list has a cycle
 carrie@ubuntu:~/0x00$
 ```
->> Solving a problem is already a big win! but finding the best and optimal way to solve it, it’s way better! Think about the most optimal / fastest way to do it.
+> Solving a problem is already a big win! but finding the best and optimal way to solve it, it’s way better! Think about the most optimal / fastest way to do it.
   
 <h1>100-write.py</h1>
 
 Write a Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line.
-* Use the function write from the sys module
-* You are not allowed to use print
-* Your script should print to stderr
-* Your script should exit with the status code 1
+* Use the function `write` from the `sys` module
+* You are not allowed to use `print`
+* Your script should print to `stderr`
+* Your script should exit with the status code `1`
 
 ```
 guillaume@ubuntu:~/py/0x00$ ./100-write.py
