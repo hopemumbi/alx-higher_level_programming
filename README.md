@@ -381,7 +381,9 @@ guillaume@ubuntu:~/py/0x00$
 <h1>101-compile</h1>
 
 Write a script that compiles a Python script file.
+
 The Python file name will be stored in the environment variable `$PYFILE`
+
 The output filename has to be `$PYFILEc` (ex: `export PYFILE=my_main.py` => output filename: `my_main.pyc`)
 
 ```
@@ -421,3 +423,5 @@ Write the Python function `def magic_calculation(a, b):` that does exactly the s
              10 BINARY_ADD
              11 RETURN_VALUE
 ```
+
+* Tip: [Python bytecode](https://docs.python.org/3.4/library/dis.html)
