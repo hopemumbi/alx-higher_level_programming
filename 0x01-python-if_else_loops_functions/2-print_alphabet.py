@@ -1,4 +1,5 @@
 #!/usr/bin/python3
-for letter in range(97, 123):
-    if chr(letter) != 'q' and chr(letter) != 'e':
-        print("{}".format(chr(letter)), end="")
+# use one loop to print the ASCII alphabet
+for alpha in range(97, 123):
+        # print, not followed by a new line
+        print("{}".format(chr(alpha)), end="")
