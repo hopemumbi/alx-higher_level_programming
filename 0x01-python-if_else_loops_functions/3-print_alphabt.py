@@ -2,6 +2,6 @@
 # use for loop through the alphabet
 for c in range(97, 123):
     # Use if statement to omit 'q' and 'e'
-    if c not in [101, 113]:
+    if c != and c != 
         # print ASCII alphabet not followed by a new line.
         print('{:c}'.format(c), end="")
