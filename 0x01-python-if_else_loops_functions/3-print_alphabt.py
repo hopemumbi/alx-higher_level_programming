@@ -2,6 +2,6 @@
 # use one loop to print the ASCII alphabet
 for alpha in range(97, 123):
     # exclude 'q' and 'e'
-    if chr(alpha) != 'q' and chr(alpha) != 'e':
+    if alpha != 101 and alpha != 113:
         # print, not followed by a new line
-        print("{}".format(chr(alpha)), end="")
+        print("{:c}".format(alpha), end="")
