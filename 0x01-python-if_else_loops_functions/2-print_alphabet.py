@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-# Use only one loop
-for c in range(123):
-    if (c >= 97) and (c <= 122):
-        # print the ASCII alphabet, not followed by a new line.
-        print('{:c}'.format(c), end="")
+for letter in range(97, 123):
+    if chr(letter) != 'q' and chr(letter) != 'e':
+        print("{}".format(chr(letter)), end="")
