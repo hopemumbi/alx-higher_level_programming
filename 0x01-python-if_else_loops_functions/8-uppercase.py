@@ -6,7 +6,7 @@ def uppercase(str):
         if (ord(i) >= 97 and ord(i) <= 122):
             # convert the lowercase to uppercase
             i = chr(ord(i) - 32)
-        # print the charaster either coverted or otherwise
+        # output the character either coverted or otherwise
         print('{}'.format(i), end="")
-    # print a newline at the end
+    # add a newline at the end
     print()
