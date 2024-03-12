@@ -5,8 +5,9 @@ for i in range(0, 10):
     for j in range(i, 10):
         # the two digits must be different
         if (i != j):
-            # print in ascending order
-            print('{}{}'.format(str(i), str(j)), end=", ")
-            # last number should be followed by a new line
-            if (i + j == 17):
+            if (i + j < 17):
+                # print in ascending order
+                print('{}{}'.format(str(i), str(j)), end=", ")
+                # last number should be followed by a new line
+            else:
                 print('{}{}'.format(str(i), str(j)))
