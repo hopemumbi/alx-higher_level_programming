@@ -7,6 +7,6 @@ def print_last_digit(number):
         print('{:d}'.format(-number % 10), end="")
         return -number % 10
     else:
-        print('{:d}'.format(number % 10),end="")
+        print('{:d}'.format(number % 10), end="")
         return number % 10
     print("\n")
