@@ -7,10 +7,10 @@ b = 5
 # ensure code is not executed when imported
 if __name__ == "__main__":
     # print addition
-    print(f"{a} + {b} = {add(a, b)}")
+    print(a, "+", b, "=", add(a, b))
     # print subtraction
-    print(f"{a} - {b} = {sub(a, b)}")
+    print(a, "-", b, "=", sub(a, b))
     # print multiplication
-    print(f"{a} * {b} = {mul(a, b)}")
+    print(a, "*", b, "=", mul(a, b))
     # print division
-    print(f"{a} / {b} = {div(a, b)}")
+    print(a, "/", b, "=", div(a, b))
