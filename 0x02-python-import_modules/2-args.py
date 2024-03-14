@@ -21,6 +21,6 @@ if __name__ == "__main__":
     # while  i <= argc then
     while i <= argc:
         # print the <argument vector>  :, <argument value> and a new line
-        print(i, ":", argv[i])
+        print("{}: {}".format(i, argv[i]))
         # increment i to move to the next argument
         i += 1
