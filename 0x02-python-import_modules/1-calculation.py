@@ -10,10 +10,10 @@ if __name__ == "__main__":
     b = 5
 
     # output addition
-    print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
+    print(a, "+", b, "=", add(a, b))
     # output subtraction
-    print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
+    print(a, "-", b, "=", sub(a, b))
     # output multiplication
-    print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
-    # outpu division
-    print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
+    print(a, "*", b, "=", mul(a, b))
+    # output division
+    print(a, "/", b, "=", div(a, b))
