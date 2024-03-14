@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 # ensure code is not executed when imported
 if __name__ == "__main__":
     # import calculator_1 module
@@ -9,10 +10,10 @@ if __name__ == "__main__":
     b = 5
 
     # print addition
-    print("{} + {} = {}".format(a, b, add(a, b)))
+    print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
     # print subtraction
-    print("{} - {} = {}".format(a, b, sub(a, b)))
+    print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
     # print multiplication
-    print("{} * {} = {}".format(a, b, mul(a, b)))
+    print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
     # print division
-    print("{} / {} = {}".format(a, b, div(a, b)))
+    print("{:d} / {:d} = {:d}".format(a, b, div(a, b)))
