@@ -7,7 +7,7 @@ def element_at(my_list, idx):
     """
     # If idx is negative, the function should return None
     # else If idx is out of range > the function should return None
-    if idx < 0 or idx > len(my_list):
+    if idx < 0 or idx >= len(my_list):
         return None
     # else return the item at the index
     else:
