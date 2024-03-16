@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+
+
 def replace_in_list(my_list, idx, element):
     """function that replaces an element of a list at a specific position
 
@@ -14,7 +16,6 @@ def replace_in_list(my_list, idx, element):
     if idx < 0 or idx >= len(my_list):
         # returns the original list
         return my_list
-    else:
-        # Replace the element at index idx with the new element
-        my_list[idx] = element
-        return my_list
+    # Replace the element at index idx with the new element
+    my_list[idx] = element
+    return my_list
