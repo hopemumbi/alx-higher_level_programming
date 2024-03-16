@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def print_list_integer(my_list=[]):
     """function that prints all integers of a list.
 
@@ -8,6 +7,6 @@ def print_list_integer(my_list=[]):
 
     """
     # Iterate over the indices of the list
-    for i in range(len(my_list)):
+    for i in my_list:
         # use str.format() to print integers at the current index i of my_list.
-        print("{}".format(my_list[i]))
+        print("{}".format(i)
