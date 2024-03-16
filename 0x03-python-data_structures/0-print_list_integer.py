@@ -7,6 +7,6 @@ def print_list_integer(my_list=[]):
 
     """
     # Iterate over the indices of the list
-    for i in my_list:
+    for n in my_list:
         # use str.format() to print integers at the current index i of my_list.
-        print("{}".format(i))
+        print("{:d}".format(n))
