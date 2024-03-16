@@ -9,7 +9,7 @@ def print_reversed_list_integer(my_list=[]):
     """
     # reverse the list
     my_list.reverse()
-        # iterate through the new list
-        for i in range(len(my_list)):
-            # print one integer per line
-            print("{:d}".format(my_list[i]))
+    # iterate through the new list
+    for i in range(len(my_list)):
+        # print one integer per line
+        print("{:d}".format(my_list[i]))
