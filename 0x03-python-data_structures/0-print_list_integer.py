@@ -8,4 +8,4 @@ def print_list_integer(my_list=[]):
     """
     for n in my_list:
         # use str.format() to print integers
-        print("{}".format(n))
+        print("{:d}".format(n))
