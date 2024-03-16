@@ -7,9 +7,11 @@ def print_reversed_list_integer(my_list=[]):
     Args:
         my_list: List to be reversed
     """
-    # reverse the list
-    my_list.reverse()
-    # iterate through the new list
-    for i in range(len(my_list)):
+    # Create a copy of the list
+    new_list = my_list.copy()
+    # reverse the copied list
+    new_list.reverse()
+    # iterate through the reversed list
+    for i in range(len(new_list)):
         # print one integer per line
-        print("{:d}".format(my_list[i]))
+        print("{:d}".format(new_list[i]))
