@@ -6,11 +6,14 @@ def print_reversed_list_integer(my_list=[]):
 
     Args:
         my_list: List to be reversed
-
     """
-    # reverse the string
-    my_list.reverse()
-    # iterate through the list
-    for i in range(len(my_list)):
-        # print one integer per line
-        print("{:d}".format(my_list[i]))
+    # check if list is empty
+    if len(my_list) != 0:
+        # if not make a copy
+        new_list = my_list.copy()
+        # reverse the new string
+        my_list.reverse()
+        # iterate through the new list
+        for i in range(len(new_list)):
+            # print one integer per line
+            print("{:d}".format(new_list[i]))
