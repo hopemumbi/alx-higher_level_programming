@@ -13,7 +13,7 @@ def replace_in_list(my_list, idx, element):
         Original list (idx < 0 or out of range), otherwise  the editited list
     """
     # check whether idx is negative or idx is out of range then
-    if idx < 0 and idx >= len(my_list):
+    if idx < 0 or idx >= len(my_list):
         # returns the original list
         return my_list
     # Replace the element at index idx with the new element
