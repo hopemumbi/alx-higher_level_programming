@@ -10,9 +10,10 @@ def delete_at(my_list=[], idx=0):
         return a new list after deletion
     """
     # check if idx is < 0 or out of range
-    if idx < 0 and idx >= len(my_list):
+    if idx < 0 or idx >= len(my_list):
         return my_list
-    # delete at index idx
-    del my_list[idx]
-    # return the new list
-    return my_list
+    else:
+        # delete at index idx
+        del my_list[idx]
+        # return the new list
+        return my_list
