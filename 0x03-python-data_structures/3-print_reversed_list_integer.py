@@ -7,6 +7,8 @@ def print_reversed_list_integer(my_list=[]):
     Args:
         my_list: List to be reversed
     """
+    if my_list is None:
+        return my_list
     # Create a copy of the list
     new_list = my_list.copy()
     # reverse the copied list
