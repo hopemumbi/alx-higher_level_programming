@@ -9,9 +9,10 @@ def multiply_by_2(a_dictionary):
         Return:
             a_dictionary times two
     """
+    new_dictionary = a_dictionary.copy()
     # list the keys
-    keys = list(a_dictionary)
+    keys = list(new_dictionary)
     # iterate through the list of keys
     for i in keys:
-        a_dictionary[i] = (a_dictionary[i])*2
-    return a_dictionary
+        new_dictionary[i] = (new_dictionary[i])*2
+    return new_dictionary
