@@ -12,9 +12,16 @@ def search_replace(my_list, search, replace):
     Return:
 
     """
-    # create a copy of the original list
-    new_list = my_list.copy()
-    # find the index of search and assign that position replace
-    new_list[new_list.index(search)] = replace
-    # return the new list
-    return(new_list)
+    # create an empty list new_list
+    new_list = []
+    # for element in my_list
+    for i in my_list:
+        # if element is equal to search
+        if i == search:
+            # add replace to new_list
+            new_list.append(replace)
+        # if not add the original element to new_list
+        else:
+            new_list.append(i)
+    # return the new_list
+    return new_list
