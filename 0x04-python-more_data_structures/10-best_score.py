@@ -20,6 +20,7 @@ def best_score(a_dictionary):
         # iterate through the dictionary
         # use item() to access both the key and value
         # if the key value is highest
-        big = [key for key, value in a_dictionary.items() if value == a[-1]]
-        # return the key
-        return big
+        for key, value in a_dictionary.items():
+            if value == a[-1]:
+                # return the key
+                return key
