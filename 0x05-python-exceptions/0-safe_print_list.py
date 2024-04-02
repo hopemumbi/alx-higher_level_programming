@@ -7,10 +7,10 @@ def safe_print_list(my_list=[], x=0):
             # print only integers on the same line
             print(my_list[i], end="")
             count += 1
-    except (IndexError, TypeError):
+    except:
         pass
-    else:
+    finally:
         # print a new line
         print()
-    # return the number of elements printed
-    return count
+        # return the number of elements printed
+        return count
