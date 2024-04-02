@@ -20,6 +20,7 @@ def list_division(my_list_1, my_list_2, list_length):
             # Check if my_list_1 or my_list_2 is too short
             except IndexError:
                 print("out of range")
+                break
     # Return a new list (length = list_length) with all divisions
     finally:
         return result
