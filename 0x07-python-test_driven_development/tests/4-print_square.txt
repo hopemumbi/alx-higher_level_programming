@@ -1,0 +1,84 @@
+# import the module
+>>> print_square = __import__('4-print_square').print_square
+
+# Test case 1: Print a square of size 4
+>>> print_square(4)
+####
+####
+####
+####
+
+# Test case 2: Print a square of size 10
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# Test case 3: Print an empty square (size 0)
+>>> print_square(0)
+
+# Test case 4: Print a square of size 1
+>>> print_square(1)
+#
+
+# Test case 5: Print square with negative size
+>>> print_square(-1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 19, in print_square
+    raise ValueError("size must be >= 0")
+ValueError: size must be >= 0
+
+# Test case 6: Print square with floating point size
+>>> print_square(1.5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 17, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+# Test case 7: Print square with missing argument
+>>> print_square()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+# Test case 8: Print square with string argument
+>>> print_square("3")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 17, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+# Test case 9: Print square with list argument
+>>> print_square([1, 2])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 17, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+# Test case 10: Print square with None argument
+>>> print_square(None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 17, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
+# Test case 11: Print square with boolean argument
+>>> print_square(True)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 17, in print_square
+    raise TypeError("size must be an integer")
+TypeError: size must be an integer
+
