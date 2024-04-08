@@ -1,0 +1,42 @@
+# import the module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test case 1: Valid names
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test case 2: Only first name provided
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test case 3: Invalid first name type (integer)
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 16, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+# Test case 4: Invalid first name type (boolean)
+>>> say_my_name(True, "White")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 16, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+# Test case 5: Invalid first name type (None)
+>>> say_my_name(None, "White")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 16, in say_my_name
+    raise TypeError("first_name must be a string")
+TypeError: first_name must be a string
+
+# Test case 6: Empty first name
+>>> say_my_name("", "Bob")
+My name is  Bob
+
+# Test case 7: Empty last name
+>>> say_my_name("Bob", "")
+My name is Bob
