@@ -22,15 +22,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle
-
-        Args:
-            value (int) : The width to set. Must be an integer
-
-        Raises:
-            TypeError: If 'value' is not an integer
-            ValueError: If 'value` is negative
-        """
+        """Set the width of the rectangle"""
         if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -44,15 +36,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Set the height of the rectangle
-
-        Args:
-            value (int) : The height to set. Must be an integer
-
-        Raises:
-            TypeError: If 'value' is not an integer
-            ValueError: If 'value` is negative
-        """
+        """Set the height of the rectangle"""
         if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -62,6 +46,7 @@ class Rectangle:
     def area(self):
         """returns the rectangle area"""
         return self.__height * self.__width
+
     def perimeter(self):
         """ returns the rectangle perimeter"""
         return (self.__height + self.__width) * 2
