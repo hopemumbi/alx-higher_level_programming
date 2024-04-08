@@ -17,25 +17,13 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get the width of the rectangle
-
-        Returns:
-            Private instance attribute: width
-        """
+        """Get the width of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle
-
-        Args:
-            value (int) : The width to set. Must be an integer
-
-        Raises:
-            TypeError: If 'value' is not an integer
-            ValueError: If 'value` is negative
-        """
-        if not isinstance(value, int):  # or isinstance(value, bool):
+        """Set the width of the rectangle"""
+        if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -43,25 +31,13 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height of the rectangle
-
-        Returns:
-            Private instance attribute: height
-        """
+        """Get the height of the rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height of the rectangle
-
-        Args:
-            value (int) : The height to set. Must be an integer
-
-        Raises:
-            TypeError: If 'value' is not an integer
-            ValueError: If 'value` is negative
-        """
-        if not isinstance(value, int):  # or isinstance(value, bool):
+        """Set the height of the rectangle"""
+        if not isinstance(value, int) or isinstance(value, bool):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
