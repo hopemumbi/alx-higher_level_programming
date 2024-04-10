@@ -11,8 +11,8 @@ class Square:
         Args:
             size (int): The size of the square
         """
-        self.__size = size      # __ makes size a private instance
-        self.__position = position
+        self.size = size      # __ makes size a private instance
+        self.position = position
 
     @property
     def size(self):
