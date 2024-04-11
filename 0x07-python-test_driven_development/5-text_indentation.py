@@ -37,4 +37,8 @@ def text_indentation(text):
             # Set skip_spaces = True to skip adding spaces to next line
             skip_spaces = True
     # Print the new line
-    print(n_text)
+    print(n_text, end="")
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/5-text_indentation.txt")
