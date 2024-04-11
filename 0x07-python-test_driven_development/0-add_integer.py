@@ -27,15 +27,15 @@ def add_integer(a, b=98):
     # a and b must be first casted to integers if they are float
     a = int(a) if isinstance(a, float) else a
     a = int(b) if isinstance(a, float) else a
-    
+
     # Add the two integers
     result = a + b
 
     # Check for float overflow
-    max_value = 1e100 # Define a threshold for overflow
+    max_value = 1e100  # Define a threshold for overflow
     if result >= max_value or result <= -max_value:
         return 89
-    
+
     # Returns an integer: the addition of a and b
     return a + b
 
