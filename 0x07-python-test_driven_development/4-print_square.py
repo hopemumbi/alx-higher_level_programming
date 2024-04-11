@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Module for printing a square"""
+
+
 def print_square(size):
     """ function that prints a square with the character #.
 
@@ -21,3 +23,8 @@ def print_square(size):
     for _ in range(size):
         # Print a row of # characters of length `size`
         print("#" * size)
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/4-print_square.txt")
