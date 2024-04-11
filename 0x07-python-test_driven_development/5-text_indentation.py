@@ -39,6 +39,7 @@ def text_indentation(text):
     # Print the new line
     print(n_text, end="")
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testfile("tests/5-text_indentation.txt")
