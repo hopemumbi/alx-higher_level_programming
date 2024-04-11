@@ -7,7 +7,7 @@ My name is John Smith
 
 # Test case 2: Only first name provided
 >>> say_my_name("Bob")
-My name is Bob
+My name is Bob 
 
 # Test case 3: Invalid first name type (integer)
 >>> say_my_name(12, "White")
@@ -39,4 +39,5 @@ My name is  Bob
 
 # Test case 7: Empty last name
 >>> say_my_name("Bob", "")
-My name is Bob
+My name is Bob 
+>>>
