@@ -17,27 +17,25 @@ Traceback (most recent call last):
     raise TypeError("first_name must be a string")
 TypeError: first_name must be a string
 
-# Test case 4: Invalid first name type (boolean)
->>> say_my_name(True, "White")
+# Test case 4: Invalid last name type (boolean)
+>>> say_my_name("True", True)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 16, in say_my_name
     raise TypeError("first_name must be a string")
-TypeError: first_name must be a string
+TypeError: last_name must be a string
 
-# Test case 5: Invalid first name type (None)
->>> say_my_name(None, "White")
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/home/hope/alx-higher_level_programming/0x07-python-test_driven_development/3-say_my_name.py", line 16, in say_my_name
-    raise TypeError("first_name must be a string")
-TypeError: first_name must be a string
-
-# Test case 6: Empty first name
+# Test case 5: Empty first name
 >>> say_my_name("", "Bob")
 My name is  Bob
 
-# Test case 7: Empty last name
+# Test case 6: Empty last name
 >>> say_my_name("Bob", "")
 My name is Bob 
+
+# Test case 7: No arguments passed
+>>> say_my_name()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 >>>
