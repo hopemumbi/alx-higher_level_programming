@@ -1,0 +1,74 @@
+>>> MyList = __import__('1-my_list').MyList
+# TEST 0 : ONLY POSITIVE INTEGERS
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# TEST 1 : MIXED INTEGERS
+>>> a_list = MyList()
+>>> a_list.append(-1)
+>>> a_list.append(4)
+>>> a_list.append(-5)
+>>> a_list.append(2)
+>>> a_list.append(-3)
+>>> print(a_list)
+[-1, 4, -5, 2, -3]
+>>> a_list.print_sorted()
+[-5, -3, -1, 2, 4]
+>>> print(a_list)
+[-1, 4, -5, 2, -3]
+
+# TEST 2: AN EMPTY LIST
+>>> e_list = MyList()
+>>> print(e_list)
+[]
+>>> e_list.print_sorted()
+[]
+>>> print(e_list)
+[]
+
+# TEST 3: ONLY NEGATIVE INTEGERS
+>>> n_list = MyList()
+>>> n_list.append(-1)
+>>> n_list.append(-4)
+>>> n_list.append(-2)
+>>> n_list.append(-3)
+>>> n_list.append(-5)
+>>> print(n_list)
+[-1, -4, -2, -3, -5]
+>>> n_list.print_sorted()
+[-5, -4, -3, -2, -1]
+>>> print(n_list)
+[-1, -4, -2, -3, -5]
+
+# TEST 4: ONLY ONE INTEGER
+>>> o_list = MyList()
+>>> o_list.append(0)
+>>> print(o_list)
+[0]
+>>> o_list.print_sorted()
+[0]
+>>> print(o_list)
+[0]
+
+# TEST 5: SAME INTEGER
+>>> s_list = MyList()
+>>> s_list.append(1)
+>>> s_list.append(1)
+>>> s_list.append(1)
+>>> s_list.append(1)
+>>> print(s_list)
+[1, 1, 1, 1]
+>>> s_list.print_sorted()
+[1, 1, 1, 1]
+>>> print(s_list)
+[1, 1, 1, 1]
