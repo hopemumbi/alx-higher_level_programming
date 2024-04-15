@@ -4,13 +4,13 @@
 # Create an instance of class(BaseGeometry)
 >>> bg = BaseGeometry()
 
-# TEST 0: VALID INPUT
+# TEST 0: VALID INTEGER
 >>> bg.integer_validator("my_int", 12)
 
-# TEST 1: VALID INPUT
+# TEST 1: VALID INTEGER
 >>> bg.integer_validator("width", 89)
 
-# TEST 2: INVALID INPUT (value is not an integer)
+# TEST 2: INVALID INTEGER (string)
 >>> try:
 ...     bg.integer_validator("name", "John")
 ... except Exception as e:
@@ -18,7 +18,7 @@
 ...
 [TypeError] name must be an integer
 
-# TEST 3: INVALID INPUT (value is 0)
+# TEST 3: INVALID INTEGER (0)
 >>> try:
 ...     bg.integer_validator("age", 0)
 ... except Exception as e:
@@ -26,7 +26,7 @@
 ...
 [ValueError] age must be greater than 0
 
-# TEST 4: INVALID INPUT (value is a negative integer)
+# TEST 4: INVALID INTEGER (negative integer)
 >>> try:
 ...     bg.integer_validator("distance", -4)
 ... except Exception as e:
@@ -40,7 +40,7 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# TEST 4: INVALID INPUT (value and name are empty strings)
+# TEST 6: INVALID INPUT (value and name are empty strings)
 >>> bg.integer_validator("", "")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -48,7 +48,7 @@ Traceback (most recent call last):
     raise TypeError("{} must be an integer".format(self.name))
 TypeError:  must be an integer
 
-# TEST 4: INVALID INPUT (value and name are null values)
+# TEST 7: INVALID INPUT (value and name are null values)
 >>> bg.integer_validator(None, None)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -56,11 +56,19 @@ Traceback (most recent call last):
     raise TypeError("{} must be an integer".format(self.name))
 TypeError: None must be an integer
 
-# TEST 4: INVALID INPUT (value is boolean)
+# TEST 8: INVALID INPUT (value is boolean)
 >>> bg.integer_validator("Hope", True)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "/home/hope/alx-higher_level_programming/0x0A-python-inheritance/7-base_geometry.py", line 17, in integer_validator
     raise TypeError("{} must be an integer".format(self.name))
 TypeError: Hope must be an integer
->>>
+
+
+# TEST 8: area() METHOD
+>>> try:
+...     print(bg.area())
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[Exception] area() is not implemented
