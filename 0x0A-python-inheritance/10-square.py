@@ -8,12 +8,8 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """Initializes a new Square instance with a given size."""
-        # Initialize the Rectangle class and pass `size`
-        super().__init__(size, size)
         # Validate the size attribute
         self.integer_validator("size", size)
+        # Initialize the Rectangle class and pass `size`
+        super().__init__(size, size)
         self.__size = size
-
-    def area(self):
-        """Calculates the area of the square."""
-        return self.__size**2
