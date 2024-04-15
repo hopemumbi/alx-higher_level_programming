@@ -4,8 +4,15 @@
 # Create an instance of class(BaseGeometry)
 >>> bg = BaseGeometry()
 
-# TEST 0: VALID INTEGER
->>> bg.integer_validator("my_int", 12)
+# TEST 0: CHECK THE TYPE OF CLASS
+>>> type(bg)
+<class '7-base_geometry.BaseGeometry'>
+
+# TEST 1: INITIALIZED WITH NO ARGUMENTS
+>>> bg = BaseGeometry(None)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: BaseGeometry() takes no arguments
 
 # TEST 1: VALID INTEGER
 >>> bg.integer_validator("width", 89)
