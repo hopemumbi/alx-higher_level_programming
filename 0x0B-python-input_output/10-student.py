@@ -25,8 +25,11 @@ class Student:
             dict: A dictionary of attributes of the Student instance.
         """
         # If attrs is a list and all elements in attrs are strings
-        if type(attrs) == list and all((type(key) == str for key in attrs)):
-            # Create a dictionary
+        if (type(attrs) == list and all(type(key) == str for key in attrs)):
+            # Create a dictionary using comprehension
+            # hasattr - Check if the key exists in the list
+            # getattr - get the value of the key
+            # return a key `k: value
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         # If attrs is None or not a list or contains non-string elements
         return self.__dict__
