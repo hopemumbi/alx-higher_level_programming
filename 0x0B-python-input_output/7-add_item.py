@@ -29,8 +29,8 @@ except FileNotFoundError:
     my_list = []
 
 # Read command-line arguments from stdin, skipping the first argument
-arguments = sys.stdin.readline().strip().split()
-for arg in arguments[1:]:
+arguments = sys.argv[1:]
+for arg in arguments:
     my_list.append(arg)
 
 # Save the updated list to the JSON file
