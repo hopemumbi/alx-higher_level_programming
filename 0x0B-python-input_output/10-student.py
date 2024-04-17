@@ -24,18 +24,9 @@ class Student:
         Returns:
             dict: A dictionary of attributes of the Student instance.
         """
-        # If attribute list is provided,
-        if attrs:
-            #  Create an empty dictionary to store the JSON representation
-            dictionary = {}
-            for key in attrs:
-                # Check if the key exists in the object's attributes list
-                if hasattr(self, key):
-                    # Add the key|value to then json dict
-                    dictionary[key] = getattr(self, key)
-        # If keys are not provided
-        else:
-            # Add all attributes
-            dictionary = self.__dict__
-        # Return the json dictionary
-        return dictionary
+        # If attrs is a list and all elements in attrs are strings
+        if type(attrs) == list and all((type(key) == str for key in attrs)):
+            # Create a dictionary
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        # If attrs is None or not a list or contains non-string elements
+        return self.__dict__
