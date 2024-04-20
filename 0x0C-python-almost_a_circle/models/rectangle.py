@@ -1,12 +1,27 @@
 #!/usr/bin/python3
-""" Defines a class Rectangle """
-
+""" Defines a Rectangle class. """
 from models.base import Base
 
 
 class Rectangle(Base):
+    """Represents a rectangle."""
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initializes an instance of Rectangle """
+        """ Initializes an instance of Rectangle.
+
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x coordinate of the rectangle.
+            y (int): The y coordinate of the rectangle.
+            id (int): The identity of an instance of Rectangle.
+
+        Raises:
+            TypeError: If width/height/x/y are not int`s.
+            ValueError: : If either height or width are <= 0.
+            ValueError: If x or y are < 0.
+
+        """
         self.__width = width
         self.__height = height
         self.__x = x
@@ -16,6 +31,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Set/get the width of the rectangle."""
         return self.__width
 
     @width.setter
@@ -28,6 +44,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Set/get the height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -40,6 +57,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Set/get the x coordinate of the rectangle"""
         return self.__x
 
     @x.setter
@@ -52,6 +70,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Set/get the y coordinate of the rectangle"""
         return self.__y
 
     @y.setter
@@ -63,11 +82,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Returns the area of a rectangle"""
+        """Return the area of a rectangle"""
         return self.width * self.height
 
     def display(self):
-        """Prints out the Rectangle to stdout using `#` """
+        """Print out the Rectangle to stdout using `#` """
         print('\n' * self.y, end="")
         for h in range(self.height):
             print(' ' * self.x, '#' * self.width)
@@ -78,7 +97,16 @@ class Rectangle(Base):
                f"{self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
-        """assigns an argument to each attribute"""
+        """Update attributes
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument should be the id attribute
+                - 2nd argument should be the width attribute
+                - 3rd argument should be the height attribute
+                - 4th argument should be the x attribute
+                - 5th argument should be the y attribute
+            **kwargs (dict): key/value pairs
+        """
         if args and len(args) > 0:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i, attr in enumerate(attributes):

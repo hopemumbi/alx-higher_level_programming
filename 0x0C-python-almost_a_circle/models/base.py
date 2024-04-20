@@ -15,7 +15,7 @@ class Base:
     def __init__(self, id=None):
         """ Initialize an instance of Base
         Attributes:
-            id (int): optional assigns id to an instance
+            id (int): The identity of an instance of Base
         """
         # If an id is provided
         if id is not None:
