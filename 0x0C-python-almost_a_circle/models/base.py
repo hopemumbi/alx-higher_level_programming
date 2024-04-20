@@ -4,17 +4,18 @@
     - avoid duplicating the same code (by extension, same bugs)
 """
 
+
 class Base:
     """Represents a base"""
-    
+
     # Private class attribute to keep track of the no of objects
     __nb_objects = 0
 
     # A constructor method
     def __init__(self, id=None):
-        """ Initialize an instance of Base 
+        """ Initialize an instance of Base
         Attributes:
-            id (int): optional - 
+            id (int): optional assigns id to an instance
         """
         # If an id is provided
         if id is not None:
