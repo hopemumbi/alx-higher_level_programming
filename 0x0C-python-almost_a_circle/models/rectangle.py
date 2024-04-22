@@ -91,7 +91,9 @@ class Rectangle(Base):
             print(' ' * self.x, '#' * self.width)
 
     def __str__(self):
-        """Overides the __str__ method"""
+        """Print a dictionary representation of a Rectangle
+        Overides the __str__ method
+        """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
                f"{self.width}/{self.height}"
 
@@ -106,12 +108,22 @@ class Rectangle(Base):
                 - 5th argument should be the y attribute
             **kwargs (dict): key/value pairs
         """
+        # If *args is provided and contains values
         if args and len(args) > 0:
+            # Define the order of attributes to be updated
             attributes = ['id', 'width', 'height', 'x', 'y']
+            # Iterate over the provided arguments and set attributes
             for i, attr in enumerate(attributes):
                 if i < len(args):
                     setattr(self, attr, args[i])
 
+        # If **kwargs is provided and contains key-value pairs
         elif kwargs and len(kwargs) > 0:
+            # Iterate over the key-value pairs and set attributes
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+        return {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
