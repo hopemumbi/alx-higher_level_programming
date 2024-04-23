@@ -1,6 +1,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBaseClass(unittest.TestCase):
@@ -94,13 +95,57 @@ class TestBase_from_json_string(unittest.TestCase):
 class TestBase_save_to_file(unittest.TestCase):
     """Test cases for method; save_to_file()"""
 
-    def test_save_list_of_instances(self):
-        Rectangle.save_to_file([Rectangle(1, 2, 3, 4, 5)])
+    def test_save_one_rectangle(self):
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        Rectangle.save_to_file([r1])
 
-        with open("Rectangle.json", "r") as file:
-            read = file.read()
+        with open("Rectangle.json", "r") as f:
+            read = f.read()
 
         expected = '[{"id": 5, "width": 1, "height": 2, "x": 3, "y": 4}]'
+
+        self.assertEqual(read, expected)
+
+    def test_save_two_rectangles(self):
+        r1 = Rectangle(10, 7, 2, 8, 1)
+        r2 = Rectangle(2, 4, 0, 0, 2)
+
+        Rectangle.save_to_file([r1, r2])
+
+        with open("Rectangle.json", "r") as f:
+            read = f.read()
+
+        expected = (
+            '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, '
+            '{"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
+        )
+
+        self.assertEqual(read, expected)
+
+    def test_save_one_square(self):
+        s1 = Square(2, 3, 4, 5)
+        Square.save_to_file([s1])
+
+        with open("Square.json", "r") as f:
+            read = f.read()
+
+        expected = '[{"id": 5, "size": 2, "x": 3, "y": 4}]'
+
+        self.assertEqual(read, expected)
+
+    def test_save_two_squares(self):
+        s1 = Square(10, 2, 8, 1)
+        s2 = Square(2, 0, 0, 2)
+
+        Square.save_to_file([s1, s2])
+
+        with open("Square.json", "r") as f:
+            read = f.read()
+
+        expected = (
+            '[{"id": 1, "size": 10, "x": 2, "y": 8}, '
+            '{"id": 2, "size": 2, "x": 0, "y": 0}]'
+        )
 
         self.assertEqual(read, expected)
 
