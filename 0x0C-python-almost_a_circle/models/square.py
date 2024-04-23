@@ -57,7 +57,7 @@ class Square(Rectangle):
         # If *args is provided and contains values
         if args and len(args) > 0:
             # Define the order of attributes to be updated
-            attributes = ['id', 'width', 'height', 'x', 'y']
+            attributes = ['id', 'size', 'x', 'y']
             # Iterate over the provided arguments and set attributes
             for i, attr in enumerate(attributes):
                 if i < len(args):
