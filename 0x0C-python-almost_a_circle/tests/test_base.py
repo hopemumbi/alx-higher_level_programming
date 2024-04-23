@@ -106,9 +106,20 @@ class TestBase_save_to_file(unittest.TestCase):
 
     def test_save_None(self):
         Rectangle.save_to_file(None)
+
         with open("Rectangle.json", "r") as file:
             read = file.read()
         expected = '[]'
+
+        self.assertEqual(read, expected)
+
+    def test_save_empty_list(self):
+        Rectangle.save_to_file([])
+
+        with open("Rectangle.json", "r") as file:
+            read = file.read()
+        expected = '[]'
+
         self.assertEqual(read, expected)
 
 
