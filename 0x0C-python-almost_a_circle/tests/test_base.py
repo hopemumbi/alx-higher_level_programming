@@ -95,17 +95,12 @@ class TestBase_save_to_file(unittest.TestCase):
     """Test cases for method; save_to_file()"""
 
     def test_save_list_of_instances(self):
-        r1 = Rectangle(10, 7, 2, 8, 1)
-        r2 = Rectangle(2, 4, 0, 0, 2)
-        Rectangle.save_to_file([r1, r2])
+        Rectangle.save_to_file([Rectangle(1, 2, 3, 4, 5)])
 
         with open("Rectangle.json", "r") as file:
             read = file.read()
 
-        expected = (
-                '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, '
-                '{"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
-        )
+        expected = '[{"id": 5, "width": 1, "height": 2, "x": 3, "y": 4}]'
 
         self.assertEqual(read, expected)
 
