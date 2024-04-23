@@ -328,7 +328,7 @@ class TestRectangleArea(unittest.TestCase):
 
 
 class TestRectangleDisplay(unittest.TestCase):
-    """Test cases for displaying the rectangle"""
+    """Test cases for method display() of Rectangle."""
 
     @staticmethod
     def capture_stdout(r, method):
@@ -371,8 +371,9 @@ class TestRectangleDisplay(unittest.TestCase):
         self.assertEqual(expected, capture.getvalue())
 
 
-class TestRectanglePrint(unittest.TestCase):
-    """Test cases for printing the rectangle"""
+class TestRectangleStr(unittest.TestCase):
+    """Test cases for method __str___ of Rectangle"""
+
     def test_str_width_height(self):
         r1 = Rectangle(4, 6)
         capture = TestRectangleDisplay.capture_stdout(r1, "print")
@@ -396,6 +397,74 @@ class TestRectanglePrint(unittest.TestCase):
         capture = TestRectangleDisplay.capture_stdout(r5, "print")
         expected = "[Rectangle] (12) 2/1 - 4/6\n"
         self.assertEqual(expected, capture.getvalue())
+
+
+class TestRectangleUpdate(unittest.TestCase):
+    """Test cases for method update() of Rectangle"""
+
+    def test_update_one_arg(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        expected = "[Rectangle] (89) 10/10 - 10/10\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_two_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2)
+        expected = "[Rectangle] (89) 10/10 - 2/10\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_three_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3)
+        expected = "[Rectangle] (89) 10/10 - 2/3\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_four_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4)
+        expected = "[Rectangle] (89) 4/10 - 2/3\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_five_args(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89, 2, 3, 4, 5)
+        expected = "[Rectangle] (89) 4/5 - 2/3\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_kwarg_height(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(height=1)
+
+        expected = "[Rectangle] ({}) 10/10 - 10/1\n".format(r1.id)
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_kwargs_width_x(self):
+        r1 = Rectangle(10, 1, 10, 10)
+        r1.update(width=1, x=2)
+        expected = "[Rectangle] ({}) 2/10 - 1/1\n".format(r1.id)
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_kwargs_width_x_y_id(self):
+        r1 = Rectangle(1, 1, 2, 10)
+        r1.update(y=1, width=2, x=3, id=89)
+        expected = "[Rectangle] (89) 3/1 - 2/1\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
+
+    def test_update_kwargs_width_height_x_y(self):
+        r1 = Rectangle(2, 1, 3, 1, 89)
+        r1.update(x=1, height=2, y=3, width=4)
+        expected = "[Rectangle] (89) 1/3 - 4/2\n"
+        got = TestRectangleDisplay.capture_stdout(r1, "print")
+        self.assertEqual(expected, got.getvalue())
 
 
 if "__name__" == "__main__":
