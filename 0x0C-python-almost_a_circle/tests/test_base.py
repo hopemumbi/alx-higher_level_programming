@@ -68,6 +68,29 @@ class TestBase_to_json_string(unittest.TestCase):
         self.assertEqual(json_dictionary, expected)
 
 
+class TestBase_from_json_string(unittest.TestCase):
+    """Test cases for method from_json_string() of class base"""
+
+    def test_from_json_string_with_empty_string(self):
+        json_string = ""
+        got = Rectangle.from_json_string(json_string)
+        self.assertEqual(got, [])
+
+    def test_from_json_string_with_none(self):
+        json_string = []
+        got = Rectangle.from_json_string(json_string)
+        self.assertEqual(got, [])
+
+    def test_from_json_string_with_valid_json_string(self):
+        list_dict = [
+                {'id': 89, 'width': 10, 'height': 4},
+                {'id': 7, 'width': 1, 'height': 7}
+                ]
+        json_string = Rectangle.to_json_string(list_dict)
+        got = Rectangle.from_json_string(json_string)
+        self.assertEqual(got, list_dict)
+
+
 if __name__ == '__main__':
     # Running the test cases
     unittest.main()
