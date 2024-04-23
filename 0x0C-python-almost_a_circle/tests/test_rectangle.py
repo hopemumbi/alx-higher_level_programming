@@ -4,8 +4,8 @@
 import unittest
 import sys
 from io import StringIO
-from models.rectangle import Rectangle
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestRectangleInstatiation(unittest.TestCase):
@@ -363,7 +363,7 @@ class TestRectangleDisplay(unittest.TestCase):
         capture = TestRectangleDisplay.capture_stdout(r3, "display")
         expected = "\n\n  ##\n  ##\n  ##\n"
         self.assertEqual(expected, capture.getvalue())
-    
+
     def test_display_width_height_x_y_again(self):
         r4 = Rectangle(3, 2, 1, 0)
         capture = TestRectangleDisplay.capture_stdout(r4, "display")
@@ -373,17 +373,28 @@ class TestRectangleDisplay(unittest.TestCase):
 
 class TestRectanglePrint(unittest.TestCase):
     """Test cases for printing the rectangle"""
-
-    def test_print_width_height_x_y(self):
-        r5 = print(4, 6, 2, 1, 12)
-        capture = TestRectangleDisplay.capture_stdout(r5, "print")
-        expected = "[Rectangle] (12) 2/1 - 4/6"
+    def test_str_width_height(self):
+        r1 = Rectangle(4, 6)
+        capture = TestRectangleDisplay.capture_stdout(r1, "print")
+        expected = "[Rectangle] ({}) 0/0 - 4/6\n".format(r1.id)
         self.assertEqual(expected, capture.getvalue())
-    
-    def test_print_width_height_x_y_again(self):
-        r6 = Rectangle(5, 5, 1, )
-        capture = TestRectangleDisplay.capture_stdout(r6, "print")
-        expected = "[Rectangle] (1) 1/0 - 5/5"
+
+    def test_str_width_height_x(self):
+        r2 = Rectangle(4, 6, 2)
+        capture = TestRectangleDisplay.capture_stdout(r2, "print")
+        expected = "[Rectangle] ({}) 2/0 - 4/6\n".format(r2.id)
+        self.assertEqual(expected, capture.getvalue())
+
+    def test_str_width_height_x_y(self):
+        r3 = Rectangle(4, 6, 2, 1)
+        capture = TestRectangleDisplay.capture_stdout(r3, "print")
+        expected = "[Rectangle] ({}) 2/1 - 4/6\n".format(r3.id)
+        self.assertEqual(expected, capture.getvalue())
+
+    def test_str_width_height_x_y_id(self):
+        r5 = Rectangle(4, 6, 2, 1, 12)
+        capture = TestRectangleDisplay.capture_stdout(r5, "print")
+        expected = "[Rectangle] (12) 2/1 - 4/6\n"
         self.assertEqual(expected, capture.getvalue())
 
 
