@@ -3,6 +3,7 @@
 """
 import unittest
 import sys
+from io import StringIO
 from models.rectangle import Rectangle
 from models.base import Base
 
@@ -308,7 +309,7 @@ class TestVAlidationOrder(unittest.TestCase):
             Rectangle(10, 2, "3", "1")
 
 
-class TestArea(unittest.TestCase):
+class TestRectangleArea(unittest.TestCase):
     """Test cases for area of rectangle"""
 
     def test_small(self):
@@ -326,9 +327,64 @@ class TestArea(unittest.TestCase):
         self.assertEqual(r3.area(), 56)
 
 
-class TestDisplayRectangle(unittest.TestCase):
-    def test_display1(self):
-        pass
+class TestRectangleDisplay(unittest.TestCase):
+    """Test cases for displaying the rectangle"""
+
+    @staticmethod
+    def capture_stdout(r, method):
+        """Captures and returns text printed to stdout.
+        Args:
+            r (Rectangle): The rectangle printed to stdout.
+            method: The function used to print a rectangle
+        """
+        capture = StringIO()
+        sys.stdout = capture
+        if method == "print":
+            print(r)
+        elif method == "display":
+            r.display()
+        sys.stdout = sys.__stdout__
+        return capture
+
+    def test_display_width_height(self):
+        r1 = Rectangle(2, 2)
+        capture = TestRectangleDisplay.capture_stdout(r1, "display")
+        expected = "##\n##\n"
+        self.assertEqual(expected, capture.getvalue())
+
+    def test_display_width_height_again(self):
+        r2 = Rectangle(4, 6)
+        capture = TestRectangleDisplay.capture_stdout(r2, "display")
+        expected = "####\n####\n####\n####\n####\n####\n"
+        self.assertEqual(expected, capture.getvalue())
+
+    def test_display_width_height_x_y(self):
+        r3 = Rectangle(2, 3, 2, 2)
+        capture = TestRectangleDisplay.capture_stdout(r3, "display")
+        expected = "\n\n  ##\n  ##\n  ##\n"
+        self.assertEqual(expected, capture.getvalue())
+    
+    def test_display_width_height_x_y_again(self):
+        r4 = Rectangle(3, 2, 1, 0)
+        capture = TestRectangleDisplay.capture_stdout(r4, "display")
+        expected = " ###\n ###\n"
+        self.assertEqual(expected, capture.getvalue())
+
+
+class TestRectanglePrint(unittest.TestCase):
+    """Test cases for printing the rectangle"""
+
+    def test_print_width_height_x_y(self):
+        r5 = print(4, 6, 2, 1, 12)
+        capture = TestRectangleDisplay.capture_stdout(r5, "print")
+        expected = "[Rectangle] (12) 2/1 - 4/6"
+        self.assertEqual(expected, capture.getvalue())
+    
+    def test_print_width_height_x_y_again(self):
+        r6 = Rectangle(5, 5, 1, )
+        capture = TestRectangleDisplay.capture_stdout(r6, "print")
+        expected = "[Rectangle] (1) 1/0 - 5/5"
+        self.assertEqual(expected, capture.getvalue())
 
 
 if "__name__" == "__main__":
