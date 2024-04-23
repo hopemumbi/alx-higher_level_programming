@@ -37,7 +37,7 @@ class Base:
             list_dictionaries (list): A list of dictionaries.
         """
         # Check if the list of dictionaries is empty or None
-        if len(list_dictionaries) == 0 or list_dictionaries is None:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             # If so, return an empty list
             return json.dumps([])
         # Otherwise serialize the list of dictionaries to a JSON string
