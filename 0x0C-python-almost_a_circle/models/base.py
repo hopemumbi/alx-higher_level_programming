@@ -77,7 +77,7 @@ class Base:
              list: A list of dictionaries parsed from the JSON string.
         """
         # Check if json_string is None or empty
-        if len(json_string) == 0 or json_string is None:
+        if json_string is None or len(json_string) == 0:
             # If so, return an empty list
             return []
         # Otherwise, parse the JSON sting and return a list
