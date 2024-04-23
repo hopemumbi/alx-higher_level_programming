@@ -91,6 +91,42 @@ class TestBase_from_json_string(unittest.TestCase):
         self.assertEqual(got, list_dict)
 
 
+class TestBase_save_to_file(unittest.TestCase):
+    """Test cases for method; save_to_file()"""
+
+    def test_save_list_of_instances(self):
+        r1 = Rectangle(10, 7, 2, 8, 1)
+        r2 = Rectangle(2, 4, 0, 0, 2)
+        Rectangle.save_to_file([r1, r2])
+
+        with open("Rectangle.json", "r") as file:
+            read = file.read()
+
+        expected = (
+                '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, '
+                '{"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]'
+        )
+
+        self.assertEqual(read, expected)
+
+    def test_save_None(self):
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            read = file.read()
+        expected = '[]'
+        self.assertEqual(read, expected)
+
+
+class TestBase_create(unittest.TestCase):
+    """Test cases for method; create(cls, **dictionary)"""
+
+    def test_create_an_instance(self):
+        r1 = Rectangle(3, 5, 1, 0, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertFalse(r1 is r2)
+
+
 if __name__ == '__main__':
     # Running the test cases
     unittest.main()
